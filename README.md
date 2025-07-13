@@ -206,3 +206,9 @@ Reads and converts raw **gyroscope** data from the specified register into **ang
 
 #### 🔹 `uint64_t millis();`
 Returns the number of milliseconds elapsed since the  system boot.
+
+---
+
+## 📚 Kalman Filter Module for MPU6050
+Implements **1D Kalman Filter** designed for sensor fusion of accelerometer and gyroscope data from the **MPU6050**.  
+It provides accurate, stable angle estimation (e.g., **pitch** and **roll**) by minimizing noise and drift.
