@@ -135,5 +135,22 @@ Sets the sample rate divider (GOR=8kHz when DLPF OFF, =1KHz when DLPF ON`(see re
 
 #### 🔹 `int16_t read_raw(uint8_t reg);`
 Reads raw 16-bit data from the specified MPU6050 register.
+> 📌 This function first reads the high byte (8 bits) at reg, then reads the low byte (8 bits) from reg + 1.
+> The two bytes are combined to return a signed 16-bit integer.
+---
 
+#### 🔹 `float mpu6050_read_accel(uint8_t reg)`;
+Reads and converts raw **accelerometer** data from the specified register into acceleration in **g** (gravitational units).
+
+#### 🔧 Parameters:
+- reg: The starting register address for the desired accelerometer axis (e.g., MPU6050_ACCEL_XOUT_H)
+
+#### 📐 Returns:
+- float: Acceleration in units of **g** (1g ≈ 9.81 m/s²)
+
+#### 📘 Details:
+- Internally reads 16-bit raw data: high byte first, then low byte
+- Converts using current MPU6050_ACCEL_CONFIG scale (±2g, ±4g, ±8g, ±16g)
+- Useful for estimating **static tilt angles** when the device is not moving
+- The raw value is divided by a **scale sensitivity factor** based on the configured full-scale range
 ---
