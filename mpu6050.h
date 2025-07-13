@@ -107,7 +107,6 @@ float mpu6050_read_accel(uint8_t reg);
 float mpu6050_read_gyro(uint8_t reg);
 void mpu6050_read_accelXYZ(float *accX, float *accY, float *accZ);
 void mpu6050_read_gyroXYZ(float *gyroX, float *gyroY, float *gyroZ);
-void mpu6050_angles_integral(float *roll, float *pitch, float dt);
 
 uint64_t millis();
 
