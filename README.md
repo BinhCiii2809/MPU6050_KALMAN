@@ -154,3 +154,17 @@ Reads and converts raw **accelerometer** data from the specified register into a
 - Useful for estimating **static tilt angles** when the device is not moving
 - The raw value is divided by a **scale sensitivity factor** based on the configured full-scale range
 ---
+
+#### 🔹 `float mpu6050_read_gyro(uint8_t reg)`;
+Reads and converts raw **gyroscope** data from the specified register into **angular velocity** in degrees per second (°/s).
+
+#### 🔧 Parameters:
+- `reg`: The starting register address for the desired gyroscope axis (e.g., `MPU6050_GYRO_XOUT_H`)
+
+#### 📐 Returns:
+- `float`: Angular velocity in units of **degrees per second (°/s)**
+
+#### 📘 Details:
+- Internally reads 16-bit raw data: high byte first, then low byte
+- Converts using the current `MPU6050_GYRO_CONFIG` scale (±250, ±500, ±1000, ±2000 °/s)
+- The raw value is divided by a **scale sensitivity factor** based on the configured full-scale range
