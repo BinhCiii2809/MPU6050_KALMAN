@@ -225,7 +225,24 @@ It provides accurate, stable angle estimation (e.g., **pitch** and **roll**) by 
 ---
 
 ### 📌 Why Use Accelerometer as Measurement and Gyroscope as Rate?
+
+#### ✅ Gyroscope (Gyro)
+ - Pro: Very responsive and smooth for short-term angular rate changes.
+ - Con: Suffers from drift over time due to bias accumulation.
+
+#### ✅ Accelerometer (Accel)
+ - Pro: Provides absolute angle estimation based on gravity direction.
+ - Con: Noisy and sensitive (shaking, movement).
 ---
+
+### 🧠 Strategy
+> 🔧 Prediction (Time Update)
+> Use gyroscope angular rate to integrate angle over time:
+
+> 🔧 Correction (Measurement Update)
+> Use accelerometer-derived angle to correct drifted estimate: 
+---
+
 ## 📁 Files
 
 - `KALMAN_FILTER.h` – Header file containing function prototypes and macros.
