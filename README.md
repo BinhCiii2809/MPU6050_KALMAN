@@ -97,20 +97,23 @@ $sudo apt-get upgrade
 ### 🧱 To compile and run this library on Raspberry Pi:
 
 1. **Download all files** into the same directory on your Raspberry Pi.
-2. Open a terminal and navigate to the directory containing the files.
+2. Open a `terminal raspberry` and navigate to the directory containing the files.
 3. Run the following commands:
 
 ```bash
 $make
 $make install
 ```
-
 4. Once installed, execute the main program:
 
 ```bash
 $./mpu6050
 ```
-
+#### 📌 Uninstall and delete all file installed 
+```bash
+$make uninstall
+$make clean
+```
 ### ⚙️ Raspberry Pi I²C Setup
  
 - Important: Make sure I²C is enabled on your Raspberry Pi. If not, follow these steps:
