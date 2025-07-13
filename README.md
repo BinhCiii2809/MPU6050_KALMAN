@@ -238,9 +238,16 @@ It provides accurate, stable angle estimation (e.g., **pitch** and **roll**) by 
 ### 🧠 Strategy
 > 🔧 Prediction (Time Update)
 > Use gyroscope angular rate to integrate angle over time:
+```c
+angle += (gyroRate - bias) * dt;
+```
 
 > 🔧 Correction (Measurement Update)
-> Use accelerometer-derived angle to correct drifted estimate: 
+> Use accelerometer-derived angle to correct drifted estimate:
+```c
+angle += K * (accAngle - angle);
+```
+
 ---
 
 ## 📁 Files
