@@ -1,3 +1,10 @@
+## 📘 Overview
+### 🔍 Review
+This library provides modular interface to configure and read data from the **MPU6050** sensor using the `wiringPi I2C` library on a **Raspberry Pi 3B** running **Ubuntu 22.04**.
+- Configuration of registers using a `struct`-based API
+- Integration with **1D Kalman Filter** for accurate roll and pitch angle estimation
+---
+
 ## 📚 Reference Documentation
 
 For more detailed technical specifications, refer to the official datasheet:
