@@ -224,6 +224,8 @@ Implements **1D Kalman Filter** designed for sensor fusion of accelerometer and 
 It provides accurate, stable angle estimation (e.g., **pitch** and **roll**) by minimizing noise and drift.
 ---
 
+### 📌 Why Use Accelerometer as Measurement and Gyroscope as Rate?
+---
 ## 📁 Files
 
 - `KALMAN_FILTER.h` – Header file containing function prototypes and macros.
