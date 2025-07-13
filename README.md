@@ -252,3 +252,6 @@ typedef struct {
 | `float kalman_getAngle(Kalman_t *k, float newAngle, float newRate, float dt);` | Update the filter and return the estimated angle      |
 | `void kalman_setAngle(Kalman_t *k, float angle);`                              | Reset the estimated angle (used when large jumps occur) |
 | `float kalman_getRate(Kalman_t *k);`                                           | Get the filtered angular rate (without bias)          |
+| `void kalman_setQangle(Kalman_t *k, float Q_angle);`                           | Tuning                                                |
+| `void kalman_setQbias(Kalman_t *k, float Q_bias);`                             | Tuning                                                |
+| `void kalman_setRmeasure(Kalman_t *k, float R_measure);`                       | Tuning                                                |
