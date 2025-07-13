@@ -168,3 +168,7 @@ Reads and converts raw **gyroscope** data from the specified register into **ang
 - Internally reads 16-bit raw data: high byte first, then low byte
 - Converts using the current `MPU6050_GYRO_CONFIG` scale (±250, ±500, ±1000, ±2000 °/s)
 - The raw value is divided by a **scale sensitivity factor** based on the configured full-scale range
+---
+
+#### 🔹 `uint64_t millis();`
+Returns the number of milliseconds elapsed since the  system boot.
