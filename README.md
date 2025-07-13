@@ -29,6 +29,35 @@ For more detailed technical specifications, refer to the official datasheet:
 | Sensor Resolution          | 16-bit ADC                               |
 | Built-in Temperature Sensor| Yes                                      |
 
+### ⚠️ I2C Address & Connection Check
+
+Before using this library, make sure your MPU6050 is properly connected via I2C to the Raspberry Pi.
+
+#### 🔍 How to Check I2C Connection:
+Open a terminal on your Raspberry Pi and run:
+
+```bash
+$gpio i2cdetect
+```
+> 📌 This command will scan and display all I2C addresses connected to your Pi.
+### ✅ Expected Result:
+- If your MPU6050 is detected, you will see an address like `0x68` (default).
+- If the displayed address is not `0x68`, you must update the library:
+### 🛠 Update I2C Address in Code:
+1. Open the file `mpu6050.h`
+2. Locate this line:
+```c
+#define MPU_ADDRESS 0x68
+```
+3. Change `0x68` to the actual address shown in the terminal (e.g.,` 0x69`)
+4. Save the file
+5. Recompile your code
+### ❌ No Address Detected?
+If no address appears in the terminal (i.e., the scan output is empty or just dashes --):
+- Check your wiring (VCC, GND, SDA, SCL)
+- Ensure I2C is enabled (raspi-config)
+- Confirm the sensor is powered properly
+> #### ⚠️ If the device is still not detected, the connection is likely faulty or the sensor is damaged.
 ---
 
 ## 🧰 Building and Running on Raspberry Pi
