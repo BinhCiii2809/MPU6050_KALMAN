@@ -229,3 +229,26 @@ It provides accurate, stable angle estimation (e.g., **pitch** and **roll**) by 
 - `KALMAN_FILTER.h` – Header file containing function prototypes and macros.
 - `KALMAN_FILTER.c` – Source file implementing the functions.
 ---
+
+## ⚙️ Kalman Filter Structure
+
+```c
+typedef struct {
+    float Q_angle; // Process noise variance for the accelerometer
+    float Q_bias; // Process noise variance for the gyro bias
+    float R_measure; // Measurement noise variance - this is actually the variance of the measurement
+
+    float angle; // Ouput- part of the 2x1 state vector
+    float bias; // Ouput- gyro bias- part of the 2x1 state vector
+    float rate; // Unbiased rate calculated from the rate and the calculated bias - you have to call getAngle to update the rate
+
+    float P[2][2]; // Error covariance matrix
+} Kalman_t;
+```
+
+| Function                                                                       | Description                                             |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| `void kalman_init(Kalman_t *k);`                                               | Initialize Kalman filter with default tuning parameters |
+| `float kalman_getAngle(Kalman_t *k, float newAngle, float newRate, float dt);` | Update the filter and return the estimated angle      |
+| `void kalman_setAngle(Kalman_t *k, float angle);`                              | Reset the estimated angle (used when large jumps occur) |
+| `float kalman_getRate(Kalman_t *k);`                                           | Get the filtered angular rate (without bias)          |
