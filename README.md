@@ -123,7 +123,7 @@ $raspi-config
 
 > Navigate to `Interface Options` → `I2C` → Select `Enable`.
 
-## 🧭 MPU6050 Library
+## 📚 MPU6050 Library
 
 This is a lightweight, modular C library for interfacing with the **MPU6050** sensor using a configurable `typedef struct` for setup. It supports accelerometer, gyroscope, angle estimation (via simple integration), and sampling configuration.
 
