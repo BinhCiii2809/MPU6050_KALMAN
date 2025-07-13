@@ -132,3 +132,8 @@ Initializes the MPU6050 device with the given configuration.
 
 #### 🔹 `void mpu6050_set_sample_time(uint8_t samptime_div);`
 Sets the sample rate divider (GOR=8kHz when DLPF OFF, =1KHz when DLPF ON`(see reg26)`, effective = GOR / (1 + samptime_div)).
+
+#### 🔹 `int16_t read_raw(uint8_t reg);`
+Reads raw 16-bit data from the specified MPU6050 register.
+
+---
