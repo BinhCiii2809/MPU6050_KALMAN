@@ -95,16 +95,21 @@ $sudo apt-get upgrade
 ```
 
 ### 🧱 To compile and run this library on Raspberry Pi:
+**Download all files** into the same directory on your Raspberry Pi.
+---
+ 
+## 📁 Files
+- `Makefile`
+---
 
-1. **Download all files** into the same directory on your Raspberry Pi.
-2. Open a `terminal raspberry` and navigate to the directory containing the files.
-3. Run the following commands:
+1. Open a `terminal raspberry` and navigate to the directory containing the files.
+2. Run the following commands:
 
 ```bash
 $make
 $make install
 ```
-4. Once installed, execute the main program:
+3. Once installed, execute the main program:
 
 ```bash
 $./mpu6050
@@ -128,7 +133,12 @@ $raspi-config
 ## 📚 MPU6050 Library
 
 This is a lightweight, modular C library for interfacing with the **MPU6050** sensor using a configurable `typedef struct` for setup. It supports accelerometer, gyroscope, angle estimation (via simple integration), and sampling configuration.
+---
 
+## 📁 Files
+
+- `mpu6050.h` – Header file containing function prototypes and macros.
+- `mpu6050.c` – Source file implementing the functions.
 ---
 
 ### 📦 `MPU6050_CONFIG_t` Structure
@@ -212,3 +222,10 @@ Returns the number of milliseconds elapsed since the  system boot.
 ## 📚 Kalman Filter Module for MPU6050
 Implements **1D Kalman Filter** designed for sensor fusion of accelerometer and gyroscope data from the **MPU6050**.  
 It provides accurate, stable angle estimation (e.g., **pitch** and **roll**) by minimizing noise and drift.
+---
+
+## 📁 Files
+
+- `KALMAN_FILTER.h` – Header file containing function prototypes and macros.
+- `KALMAN_FILTER.c` – Source file implementing the functions.
+---
